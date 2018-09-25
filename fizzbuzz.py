@@ -21,4 +21,4 @@ for x in range(1,maxnum+1):
             + zero_str[10:15] + ':' + zero_str[15:20] \
             + ':' + zero_str[20:] + ':'
         display.show(Image(all))
-    sleep(10ff00)
+    sleep(1000)
