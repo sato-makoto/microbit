@@ -1,20 +1,14 @@
 from microbit import *
 x, y, i, w = 0, 0, 0, 0
-w_ori = 800
-round = [[x, y] for x in range(5)]
-round += [[4, y] for y in range(5)]
-round += [[x, 4] for x in range(4, -1, -1)]
-round += [[0, y] for y in range(4, -1, -1)]
+w = 200
+round = [[y, x] for x in range(5) for y in range(5) \
+    if x ==0 or y == 4 ]
+round += [[y, x] for x in range(4, -1, -1) \
+    for y in range(4, -1, -1) if x == 4 or y == 0 if x != y]
+
 while True:
-    if round[i] == [0, 0] \
-            or round[i] == [0, 4] \
-            or round[i] == [4, 0] \
-            or round[i] == [4, 4]:
-        w = w_ori/2
-    else:
-        w = w_ori
     display.set_pixel(round[i][0], round[i][1], 9)
-    if i == 19:
+    if i == len(round)-1:
         i = 0
     else:
         i += 1
