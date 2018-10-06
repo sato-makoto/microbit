@@ -9,6 +9,7 @@ round += [[0, y] for y in range(3, 0, -1)]
 round.reverse()
 
 while True:
+    display.set_pixel(2,2,9)
     display.set_pixel(round[i][0], round[i][1], 9)
     display.set_pixel(round[i-1][0], round[i-1][1], 7)
     display.set_pixel(round[i-2][0], round[i-2][1], 5)
