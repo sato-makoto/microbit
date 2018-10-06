@@ -1,11 +1,10 @@
 from microbit import *
-x, y, i, w = 0, 0, 0, 0
+x, y, i = 0, 0, 0
 w = 200
-round = [[y, x] for x in range(5) for y in range(5) \
-    if x ==0 or y == 4 ]
-round += [[y, x] for x in range(4, -1, -1) \
-    for y in range(4, -1, -1) if x == 4 or y == 0 if x != y]
-
+round = [[x, y] for x in range(4)]
+round += [[4, y] for y in range(4)]
+round += [[x, 4] for x in range(4, 0, -1)]
+round += [[0, y] for y in range(4, 0, -1)]
 while True:
     display.set_pixel(round[i][0], round[i][1], 9)
     if i == len(round)-1:
@@ -14,4 +13,3 @@ while True:
         i += 1
     sleep(w)
     display.clear()       
-        
