@@ -11,9 +11,20 @@ mlist = [
         music.BA_DING, music.WAWAWAWAA, music.JUMP_UP,
         music.JUMP_DOWN, music.POWER_UP, music.POWER_DOWN ]
 
+plist = [
+        'DADADADUM', 'ENTERTAINER', 'PRELUDE',
+        'ODE', 'NYAN', 'RINGTONE',
+        'FUNK', 'BLUES', 'BIRTHDAY',
+        'WEDDING', 'FUNERAL', 'PUNCHLINE',
+        'PYTHON', 'BADDY', 'CHASE',
+        'BA_DING', 'WAWAWAWAA', 'JUMP_UP',
+        'JUMP_DOWN', 'POWER_UP', 'POWER_DOWN' ]
+
 while len(mlist) > 0:
     num = random.randint(0,len(mlist)-1)
-    music.play(mlist[num])
-    mlist.pop(num)
+    title = str(mlist[num]).replace('music.','')
+    music.play(mlist.pop(num))
     sleep(300)
-    display.scroll(str(len(mlist)))
+    display.scroll(plist.pop(num))
+
+display.show(Image.HAPPY)
